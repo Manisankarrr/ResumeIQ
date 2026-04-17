@@ -1,0 +1,250 @@
+# ============================================================
+# SECRETS & ENVIRONMENT
+# ============================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.toml
+
+# ============================================================
+# PYTHON
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+.installed.cfg
+MANIFEST
+
+# ============================================================
+# VIRTUAL ENVIRONMENTS
+# ============================================================
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+.virtualenv/
+
+# ============================================================
+# PACKAGE MANAGERS
+# ============================================================
+pip-log.txt
+pip-delete-this-directory.txt
+.python-version
+
+# ============================================================
+# TESTING & COVERAGE
+# ============================================================
+.pytest_cache/
+.cache/
+.tox/
+.nox/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.coveragerc
+nosetests.xml
+test-results/
+junit/
+
+# ============================================================
+# TYPE CHECKING & LINTING
+# ============================================================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pyright/
+.ruff_cache/
+
+# ============================================================
+# JUPYTER / NOTEBOOKS
+# ============================================================
+.ipynb_checkpoints/
+*.ipynb
+
+# ============================================================
+# ML / AI MODEL ARTIFACTS
+# ============================================================
+# Sentence-transformers cache (large model files)
+.cache/
+~/.cache/
+*.bin
+*.safetensors
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.joblib
+
+# FAISS index files
+*.faiss
+*.index
+
+# ============================================================
+# STREAMLIT
+# ============================================================
+.streamlit/secrets.toml
+
+# ============================================================
+# FASTAPI / UVICORN
+# ============================================================
+*.pid
+
+# ============================================================
+# LANGSMITH / LANGCHAIN
+# ============================================================
+langchain_cache/
+.langchain/
+
+# ============================================================
+# LOGS
+# ============================================================
+*.log
+*.log.*
+logs/
+log/
+
+# ============================================================
+# UPLOADED / TEMP FILES
+# ============================================================
+uploads/
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# PDF files uploaded during testing
+# (comment out if you want to commit sample resumes)
+*.pdf
+
+# ============================================================
+# DATA & OUTPUT FILES
+# ============================================================
+*.csv
+*.json
+!package.json
+!package-lock.json
+*.xlsx
+*.xls
+data/
+output/
+results/
+
+# ============================================================
+# WINDOWS
+# ============================================================
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+# ============================================================
+# MACOS
+# ============================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ============================================================
+# LINUX
+# ============================================================
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================
+# IDEs & EDITORS
+# ============================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim / Neovim
+*.swp
+*.swo
+Session.vim
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# Spyder
+.spyderproject.cfg
+.spyproject/
+
+# Rope
+.ropeproject/
+
+# ============================================================
+# NODE (if any frontend tooling is added later)
+# ============================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+.yarn/
+
+# ============================================================
+# DOCKER
+# ============================================================
+.dockerignore
+docker-compose.override.yml
+
+# ============================================================
+# MISCELLANEOUS
+# ============================================================
+*.orig
+*.rej
+*.patch
+*.diff
+ui_source.html

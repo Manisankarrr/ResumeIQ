@@ -1,0 +1,927 @@
+job_roles:
+  Backend Engineer:
+    category: engineering
+    skills:
+      - Python
+      - Java
+      - Go
+      - Node.js
+      - C#
+      - REST APIs
+      - GraphQL
+      - gRPC
+      - PostgreSQL
+      - MongoDB
+      - Redis
+      - Microservices
+      - Serverless
+      - Docker
+      - Kubernetes
+      - CI/CD
+      - System Design
+  Frontend Engineer:
+    category: engineering
+    skills:
+      - JavaScript
+      - TypeScript
+      - React
+      - Next.js
+      - Vue.js
+      - Angular
+      - HTML5
+      - CSS3
+      - SASS
+      - Webpack
+      - Vite
+      - Redux
+      - Zustand
+      - WebSockets
+      - Responsive Design
+      - Figma
+  Full Stack Engineer:
+    category: engineering
+    skills:
+      - JavaScript
+      - TypeScript
+      - React
+      - Node.js
+      - Full-stack Architecture
+      - Python
+      - Django
+      - PostgreSQL
+      - MongoDB
+      - Docker
+      - REST APIs
+      - GraphQL
+      - AWS
+      - Git
+      - CI/CD
+  iOS Developer:
+    category: engineering
+    skills:
+      - Swift
+      - Objective-C
+      - SwiftUI
+      - UIKit
+      - CoreData
+      - Combine
+      - XCTest
+      - CocoaPods
+      - SPM
+      - TestFlight
+      - iOS SDK
+      - REST APIs
+      - CoreAnimation
+      - Mobile System Design
+      - App Store Connect
+  Android Developer:
+    category: engineering
+    skills:
+      - Kotlin
+      - Java
+      - Android SDK
+      - Jetpack Compose
+      - Coroutines
+      - Room
+      - Retrofit
+      - Dagger
+      - Hilt
+      - Gradle
+      - Espresso
+      - Material Design
+      - Firebase
+      - Google Play Console
+      - Mobile System Design
+  DevOps Engineer:
+    category: operations
+    skills:
+      - Linux
+      - Bash
+      - Docker
+      - Kubernetes
+      - Terraform
+      - Ansible
+      - Jenkins
+      - GitHub Actions
+      - GitLab CI
+      - AWS
+      - GCP
+      - Azure
+      - Prometheus
+      - Grafana
+      - ELK Stack
+      - Python
+      - Network Security
+  Site Reliability Engineer:
+    category: operations
+    skills:
+      - Python
+      - Go
+      - Linux Internals
+      - Kubernetes
+      - Terraform
+      - Incident Management
+      - SLO/SLI/SLA
+      - Datadog
+      - Prometheus
+      - Grafana
+      - Chaos Engineering
+      - Troubleshooting
+      - Bash
+      - AWS
+      - TCP/IP
+      - PagerDuty
+  Cloud Architect:
+    category: engineering
+    skills:
+      - AWS
+      - GCP
+      - Azure
+      - Cloud Architecture
+      - System Design
+      - Infrastructure as Code
+      - Kubernetes
+      - Microservices
+      - Serverless
+      - Cloud Security
+      - FinOps
+      - Disaster Recovery
+      - IAM
+      - Network Topology
+      - High Availability
+  Platform Engineer:
+    category: engineering
+    skills:
+      - Python
+      - Go
+      - Kubernetes
+      - Helm
+      - Terraform
+      - Crossplane
+      - CI/CD
+      - ArgoCD
+      - GitHub Actions
+      - Backstage
+      - Developer Productivity
+      - Platform Architecture
+      - Service Mesh
+      - Istio
+      - Bash
+  Database Administrator:
+    category: engineering
+    skills:
+      - PostgreSQL
+      - MySQL
+      - Oracle
+      - SQL Server
+      - MongoDB
+      - Cassandra
+      - Database Tuning
+      - Backup & Recovery
+      - High Availability
+      - Replication
+      - Query Optimization
+      - Linux
+      - Shell Scripting
+      - Data Migration
+      - AWS RDS
+  Data Scientist:
+    category: data
+    skills:
+      - Python
+      - pandas
+      - NumPy
+      - scikit-learn
+      - Machine Learning
+      - Statistics
+      - Jupyter Notebooks
+      - SQL
+      - XGBoost
+      - Feature Engineering
+      - PyTorch
+      - TensorFlow
+      - A/B Testing
+      - Data Visualization
+      - matplotlib
+      - Seaborn
+  Data Engineer:
+    category: data
+    skills:
+      - Python
+      - SQL
+      - Spark
+      - Hadoop
+      - Airflow
+      - dbt
+      - Snowflake
+      - BigQuery
+      - Redshift
+      - Kafka
+      - Data Warehousing
+      - ETL/ELT
+      - AWS
+      - Docker
+      - Kubernetes
+  Machine Learning Engineer:
+    category: data
+    skills:
+      - Python
+      - PyTorch
+      - TensorFlow
+      - Machine Learning
+      - Deep Learning
+      - MLOps
+      - MLflow
+      - Kubernetes
+      - Kubeflow
+      - Docker
+      - CUDA
+      - Model Deployment
+      - FastAPI
+      - Hugging Face
+      - Transformers
+  Data Analyst:
+    category: data
+    skills:
+      - SQL
+      - Python
+      - pandas
+      - Excel
+      - Tableau
+      - Power BI
+      - Looker
+      - Data Visualization
+      - Reporting
+      - Dashboarding
+      - Descriptive Statistics
+      - Google Analytics
+      - A/B Testing
+      - Data Cleaning
+      - Communication
+  Analytics Engineer:
+    category: data
+    skills:
+      - SQL
+      - dbt
+      - Snowflake
+      - BigQuery
+      - Python
+      - Data Modeling
+      - Git
+      - Airflow
+      - Fivetran
+      - Data Warehousing
+      - Tableau
+      - Looker
+      - Analytics Strategy
+      - Data Governance
+      - CI/CD
+  Business Intelligence Developer:
+    category: data
+    skills:
+      - SQL
+      - Tableau
+      - Power BI
+      - Looker
+      - QlikSense
+      - Data Modeling
+      - ETL
+      - SSIS
+      - SSAS
+      - SSRS
+      - Dashboard Design
+      - Data Warehousing
+      - DAX
+      - Excel
+      - Python
+  Statistician:
+    category: data
+    skills:
+      - R
+      - Python
+      - Statistics
+      - Probability Theory
+      - Hypothesis Testing
+      - Bayesian Statistics
+      - Experimental Design
+      - Regression Analysis
+      - Time Series Analysis
+      - SAS
+      - SPSS
+      - Data Modeling
+      - Quantitative Analysis
+      - Survey Design
+      - Mathematical Modeling
+  Quantitative Analyst:
+    category: data
+    skills:
+      - Python
+      - C++
+      - R
+      - Stochastic Calculus
+      - Time Series Analysis
+      - Financial Modeling
+      - Algorithmic Trading
+      - Risk Management
+      - Machine Learning
+      - SQL
+      - MATLAB
+      - Monte Carlo Simulations
+      - Portfolio Optimization
+      - Derivatives Pricing
+      - NumPy
+  Operations Research Analyst:
+    category: data
+    skills:
+      - Linear Programming
+      - Optimization
+      - Python
+      - Gurobi
+      - CPLEX
+      - R
+      - Mathematical Modeling
+      - Simulation
+      - Supply Chain Analytics
+      - Logistics
+      - Heuristics
+      - Data Analysis
+      - SQL
+      - Statistics
+      - Forecasting
+  NLP Engineer:
+    category: data
+    skills:
+      - Python
+      - NLP
+      - Hugging Face
+      - Transformers
+      - PyTorch
+      - TensorFlow
+      - spaCy
+      - NLTK
+      - LLMs
+      - LangChain
+      - Vector Databases
+      - FAISS
+      - Text Classification
+      - Named Entity Recognition
+      - Text Generation
+  Product Manager:
+    category: business
+    skills:
+      - Product Strategy
+      - Roadmap Planning
+      - Agile Methodology
+      - Scrum
+      - Requirement Gathering
+      - User Research
+      - A/B Testing
+      - Data Analysis
+      - Jira
+      - Confluence
+      - Stakeholder Management
+      - Go-to-Market Strategy
+      - UI/UX Principles
+      - Market Analysis
+      - Key Performance Indicators (KPIs)
+  Project Manager:
+    category: business
+    skills:
+      - Project Planning
+      - Risk Management
+      - Budgeting
+      - Agile Methodology
+      - Waterfall Methodology
+      - Jira
+      - Asana
+      - Trello
+      - Microsoft Project
+      - Stakeholder Management
+      - Communication
+      - Scope Management
+      - Resource Allocation
+      - Change Management
+      - PMP
+  Scrum Master:
+    category: business
+    skills:
+      - Scrum
+      - Agile Methodology
+      - Kanban
+      - Sprint Planning
+      - Retrospectives
+      - Jira
+      - Confluence
+      - Agile Coaching
+      - Impediment Removal
+      - Team Facilitation
+      - User Stories
+      - Velocity Tracking
+      - Conflict Resolution
+      - Continuous Improvement
+      - SAFe
+  Agile Coach:
+    category: business
+    skills:
+      - Agile Coaching
+      - Lean Thinking
+      - SAFe
+      - Scrum
+      - Kanban
+      - Organizational Design
+      - Change Management
+      - Value Stream Mapping
+      - Facilitation
+      - Mentoring
+      - Team Dynamics
+      - Metrics & Reporting
+      - Framework Implementation
+      - Continuous Improvement
+      - Leadership
+  UX Designer:
+    category: design
+    skills:
+      - User Experience (UX)
+      - Wireframing
+      - Prototyping
+      - Output Research
+      - User Testing
+      - Information Architecture
+      - Persona Development
+      - Journey Mapping
+      - Figma
+      - Sketch
+      - InVision
+      - Interaction Design
+      - Accessibility
+      - Usability Testing
+      - Design Thinking
+  UI Designer:
+    category: design
+    skills:
+      - User Interface (UI)
+      - Visual Design
+      - Figma
+      - Sketch
+      - Adobe XD
+      - Typography
+      - Color Theory
+      - Iconography
+      - Design Systems
+      - Responsive Design
+      - Prototyping
+      - CSS
+      - Animation
+      - Auto Layout
+      - Interaction Design
+  Product Designer:
+    category: design
+    skills:
+      - Figma
+      - UX Design
+      - UI Design
+      - Design Systems
+      - Prototyping
+      - User Research
+      - Product Strategy
+      - Wireframing
+      - Interaction Design
+      - Visual Design
+      - CSS
+      - HTML
+      - Usability Testing
+      - Stakeholder Management
+      - Journey Mapping
+  Graphic Designer:
+    category: design
+    skills:
+      - Adobe Creative Suite
+      - Photoshop
+      - Illustrator
+      - InDesign
+      - Visual Design
+      - Typography
+      - Color Theory
+      - Branding
+      - Layout Design
+      - Print Design
+      - Digital Design
+      - Illustration
+      - Logo Design
+      - Figma
+      - Concept Development
+  Motion Designer:
+    category: design
+    skills:
+      - After Effects
+      - Premiere Pro
+      - Cinema 4D
+      - Animation
+      - Motion Graphics
+      - Storyboarding
+      - Visual Effects
+      - 3D Modeling
+      - Illustration
+      - Typography
+      - Video Editing
+      - Keyframing
+      - Sound Design
+      - Blender
+      - Principle
+  3D Artist:
+    category: design
+    skills:
+      - Blender
+      - Maya
+      - 3ds Max
+      - ZBrush
+      - 3D Modeling
+      - Texturing
+      - Substance Painter
+      - Rigging
+      - Animation
+      - Lighting
+      - Rendering
+      - Unreal Engine
+      - Unity
+      - Photoshop
+      - UV Mapping
+  Security Engineer:
+    category: operations
+    skills:
+      - Cybersecurity
+      - Network Security
+      - Python
+      - Cloud Security
+      - Incident Response
+      - SIEM
+      - Penetration Testing
+      - Vulnerability Assessment
+      - Splunk
+      - Cryptography
+      - OWASP
+      - IAM
+      - Firewalls
+      - Threat Modeling
+      - Linux
+  Penetration Tester:
+    category: operations
+    skills:
+      - Ethical Hacking
+      - Penetration Testing
+      - Metasploit
+      - Burp Suite
+      - Nmap
+      - Wireshark
+      - Web Application Security
+      - Network Security
+      - Scripting
+      - Python
+      - Bash
+      - OSINT
+      - Reverse Engineering
+      - Social Engineering
+      - Reporting
+  IAM Engineer:
+    category: operations
+    skills:
+      - Identity and Access Management (IAM)
+      - Active Directory
+      - Okta
+      - Auth0
+      - OAuth
+      - SAML
+      - OIDC
+      - Azure AD
+      - CyberArk
+      - PAM
+      - RBAC
+      - SSO
+      - LDAP
+      - Cloud IAM
+      - Security Architecture
+  SOC Analyst:
+    category: operations
+    skills:
+      - SIEM
+      - Splunk
+      - Incident Response
+      - Threat Hunting
+      - IDS/IPS
+      - Network Analysis
+      - Wireshark
+      - Log Analysis
+      - Malware Analysis
+      - Cybersecurity
+      - Endpoint Protection
+      - EDR
+      - Phishing Analysis
+      - TCP/IP
+      - Security Operations
+  Network Administrator:
+    category: operations
+    skills:
+      - Networking
+      - TCP/IP
+      - Routing & Switching
+      - Cisco
+      - Firewalls
+      - VPN
+      - DNS
+      - DHCP
+      - Network Troubleshooting
+      - BGP
+      - OSPF
+      - Wireshark
+      - Network Security
+      - Juniper
+      - Load Balancing
+  Systems Administrator:
+    category: operations
+    skills:
+      - Linux
+      - Windows Server
+      - Active Directory
+      - VMware
+      - Virtualization
+      - Bash
+      - PowerShell
+      - Troubleshooting
+      - System Monitoring
+      - Backup Management
+      - DNS
+      - DHCP
+      - Network Configuration
+      - Cloud Providers
+      - Security Patching
+  IT Support Specialist:
+    category: operations
+    skills:
+      - Troubleshooting
+      - Help Desk
+      - Active Directory
+      - Windows 10/11
+      - macOS
+      - Hardware Support
+      - Ticketing Systems
+      - ServiceNow
+      - Customer Support
+      - Network Troubleshooting
+      - Office 365
+      - G Suite
+      - Communication
+      - Remote Support
+      - ITIL
+  Quality Assurance Engineer:
+    category: engineering
+    skills:
+      - Manual Testing
+      - Automated Testing
+      - Test Planning
+      - Test Cases
+      - Bug Tracking
+      - Jira
+      - Selenium
+      - Cypress
+      - Postman
+      - API Testing
+      - Regression Testing
+      - Agile Methodology
+      - QA Processes
+      - SQL
+      - Playwright
+  Test Automation Engineer:
+    category: engineering
+    skills:
+      - Python
+      - Java
+      - Selenium
+      - Cypress
+      - Playwright
+      - Appium
+      - Test Automation
+      - CI/CD
+      - Jenkins
+      - PyTest
+      - JUnit
+      - Page Object Model
+      - API Testing
+      - Mocking
+      - Git
+  Software Architect:
+    category: engineering
+    skills:
+      - System Design
+      - Microservices
+      - Cloud Architecture
+      - AWS
+      - Distributed Systems
+      - Domain-Driven Design
+      - Event-Driven Architecture
+      - REST APIs
+      - API Design
+      - Scalability
+      - High Availability
+      - Technical Leadership
+      - Data Modeling
+      - Security Architecture
+      - Kubernetes
+  Technical Writer:
+    category: business
+    skills:
+      - Technical Writing
+      - Documentation
+      - API Documentation
+      - Markdown
+      - Git
+      - Proofreading
+      - Confluence
+      - Read-the-Docs
+      - Swagger/OpenAPI
+      - User Manuals
+      - Clear Communication
+      - Information Architecture
+      - Editing
+      - Technical Acumen
+      - HTML/CSS
+  Sales Engineer:
+    category: business
+    skills:
+      - Technical Sales
+      - Presentations
+      - Proof of Concept (PoC)
+      - Solution Architecture
+      - Client Management
+      - Product Demonstrations
+      - Communication
+      - B2B Sales
+      - RFP/RFI Responses
+      - Technical Troubleshooting
+      - objection handling
+      - Salesforce
+      - APIs
+      - Cloud Computing
+      - Cross-functional Collaboration
+  Account Executive:
+    category: business
+    skills:
+      - B2B Sales
+      - Cold Calling
+      - Prospecting
+      - CRM Setup
+      - Salesforce
+      - Lead Generation
+      - Closing
+      - Negotiation
+      - Pipeline Management
+      - Forecasting
+      - Client Presentations
+      - Relationship Management
+      - SPIN Selling
+      - Outreach
+      - Communication
+  Customer Success Manager:
+    category: business
+    skills:
+      - Customer Success
+      - Onboarding
+      - Churn Reduction
+      - Relationship Management
+      - Upselling
+      - Cross-selling
+      - Gainsight
+      - Salesforce
+      - Product Adoption
+      - Communication
+      - QBRs (Quarterly Business Reviews)
+      - Account Management
+      - Empathy
+      - Troubleshooting
+      - Client Advocacy
+  Digital Marketer:
+    category: business
+    skills:
+      - Digital Marketing
+      - SEO
+      - SEM
+      - Social Media Marketing
+      - Google Analytics
+      - Content Marketing
+      - Email Marketing
+      - PPC
+      - Google Ads
+      - Facebook Ads
+      - Copywriting
+      - Conversion Rate Optimization
+      - HubSpot
+      - A/B Testing
+      - Marketing Strategy
+  SEO Specialist:
+    category: business
+    skills:
+      - SEO
+      - Keyword Research
+      - On-Page SEO
+      - Off-Page SEO
+      - Technical SEO
+      - Google Analytics
+      - Google Search Console
+      - Ahrefs
+      - SEMrush
+      - Link Building
+      - Content Strategy
+      - HTML/CSS
+      - WordPress
+      - Algorithm Updates
+      - Data Analysis
+  Content Marketer:
+    category: business
+    skills:
+      - Content Strategy
+      - Copywriting
+      - SEO Writing
+      - Blogging
+      - Editorial Planning
+      - Social Media Management
+      - WordPress
+      - Email Marketing
+      - Mailchimp
+      - Content Distribution
+      - Storytelling
+      - Analytics
+      - Brand Voice
+      - Canva
+      - Research
+  Financial Analyst:
+    category: business
+    skills:
+      - Financial Modeling
+      - Excel
+      - Forecasting
+      - Variance Analysis
+      - Financial Reporting
+      - Budgeting
+      - Data Analysis
+      - Valuation
+      - SQL
+      - Corporate Finance
+      - Tableu
+      - Risk Management
+      - Accounting Principles
+      - Bloomberg Terminal
+      - ERP Systems
+  Human Resources Manager:
+    category: operations
+    skills:
+      - HR Management
+      - Employee Relations
+      - Talent Acquisition
+      - Onboarding
+      - Performance Management
+      - HRIS
+      - Workday
+      - BambooHR
+      - Compliance
+      - Compensation & Benefits
+      - Conflict Resolution
+      - Employee Engagement
+      - HR Policies
+      - Labor Laws
+      - Leadership Training
+  Talent Acquisition Specialist:
+    category: operations
+    skills:
+      - Recruiting
+      - Sourcing
+      - LinkedIn Recruiter
+      - Applicant Tracking Systems (ATS)
+      - Greenhouse
+      - Lever
+      - Interviewing
+      - Offer Negotiation
+      - Employer Branding
+      - Boolean Search
+      - Talent Pipelining
+      - Candidate Experience
+      - Diversity & Inclusion
+      - Screening
+      - Market Research
+  Generative AI Engineer:
+    category: engineering
+    skills:
+      - Python
+      - PyTorch
+      - LangChain
+      - LlamaIndex
+      - Prompt Engineering
+      - RAG Architecture
+      - Vector Databases
+      - Fine-Tuning
+      - LoRA
+      - Transformer Models
+      - Hugging Face
+      - Text Generation
+      - Embeddings
+      - OpenAI API
+      - Qdrant
+      - Pinecone
