@@ -1,12 +1,14 @@
 ---
-title: ResumeIQ
-emoji: 📄
-colorFrom: purple
-colorTo: teal
-sdk: streamlit
-sdk_version: "1.35.0"
-app_file: app.py
+title: Resume Iq
+emoji: 🚀
+colorFrom: red
+colorTo: red
+sdk: docker
+app_port: 8501
+tags:
+  - streamlit
 pinned: false
+short_description: Streamlit template space
 ---
 
 # ResumeIQ
