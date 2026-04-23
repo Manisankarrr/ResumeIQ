@@ -3,12 +3,10 @@ title: Resume Iq
 emoji: 🚀
 colorFrom: red
 colorTo: red
-sdk: docker
-app_port: 8501
-tags:
-  - streamlit
+sdk: streamlit
+app_file: app.py
 pinned: false
-short_description: Streamlit template space
+short_description: Streamlit-based AI resume screening app
 
 ---
 
