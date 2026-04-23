@@ -1,6 +1,9 @@
+import os
 import streamlit as st
 import httpx
 from theme import apply_theme
+
+API_URL = os.getenv("API_URL", "http://localhost:8000")
 from html_components import (build_candidate_card_html, build_ranking_chart_html,
   build_skill_matrix_html, build_metrics_html, get_colors)
 
@@ -111,7 +114,7 @@ if st.session_state.get("screening", False) and uploaded_files and jd_text:
         files = [("resumes", (f.name, f.read(), "application/pdf")) for f in uploaded_files]
         with httpx.Client(timeout=120) as client:
             response = client.post(
-                "http://localhost:8000/api/v1/screen",
+                f"{API_URL}/api/v1/screen",
                 files=files,
                 data={"jd_text": jd_text}
             )

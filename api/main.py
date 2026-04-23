@@ -1,4 +1,5 @@
 import logging
+import os
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -34,5 +35,6 @@ async def health_check():
     return {"status": "ok"}
 
 if __name__ == "__main__":
-    # Start up the application utilizing uvicorn with module string for hot reloading
-    uvicorn.run("api.main:app", host="0.0.0.0", port=8000, reload=True)
+    # Start up the application utilizing uvicorn
+    uvicorn.run("api.main:app", host="0.0.0.0", port=int(os.getenv("PORT", 8000)), reload=False)
+
