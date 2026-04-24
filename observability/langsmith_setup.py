@@ -3,14 +3,23 @@ from config import settings
 
 def configure_langsmith() -> None:
     """
-    Configures LangChain environment variables to dynamically route execution
+    Configures LangSmith environment variables to dynamically route execution
     traces directly to LangSmith for full lifecycle observability.
     Should be invoked once during the parent app startup sequence.
     """
-    if settings.LANGCHAIN_API_KEY:
-        os.environ["LANGCHAIN_TRACING_V2"] = "true"
-        os.environ["LANGCHAIN_API_KEY"] = settings.LANGCHAIN_API_KEY
-        os.environ["LANGCHAIN_PROJECT"] = settings.LANGCHAIN_PROJECT
+    if settings.LANGSMITH_API_KEY:
+        os.environ["LANGSMITH_TRACING"] = "true"
+        os.environ["LANGSMITH_API_KEY"] = settings.LANGSMITH_API_KEY
+        os.environ["LANGSMITH_PROJECT"] = settings.LANGSMITH_PROJECT
+        os.environ["LANGSMITH_ENDPOINT"] = "https://api.smith.langchain.com"
+
+def get_run_url() -> str:
+    """
+    Returns the LangSmith project URL for easy logging and quick navigation
+    to the trace dashboard.
+    """
+    project_name = settings.LANGSMITH_PROJECT
+    return f"https://smith.langchain.com/projects/{project_name}"
 
 def create_eval_dataset_entry(
     resume_name: str, 

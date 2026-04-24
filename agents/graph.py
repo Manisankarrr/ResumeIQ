@@ -28,7 +28,7 @@ def run_screening(resume_texts: dict[str, str], jd_text: str) -> ScreenerState:
     """
     Initializes a new state with resumes and job description texts, 
     and invokes the langgraph compilation. 
-    LangSmith auto-traces this automatically if LANGCHAIN_API_KEY is set in your environment.
+    LangSmith auto-traces this automatically if LANGSMITH_API_KEY is set in your environment.
     """
     # Build default state
     state = default_state()
