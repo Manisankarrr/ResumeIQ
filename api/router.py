@@ -32,14 +32,11 @@ async def screen_resumes(
                 text = extract_text_from_pdf(file_bytes)
                 resume_texts[resume.filename] = text
             except ValueError as e:
-                # E.g., if the text length is under 50 chars as defined in the parser
                 raise HTTPException(status_code=400, detail=f"Error parsing PDF {resume.filename}: {e}")
 
-        # Execute our compiled LangGraph screening pipeline
         state = run_screening(resume_texts, jd_text)
 
         if state.get("error"):
-            # If our state captured an explicit workflow error
             raise HTTPException(status_code=422, detail=state["error"])
 
         extracted_skills = state.get("extracted_skills", {})
@@ -54,10 +51,8 @@ async def screen_resumes(
             score = scores.get(candidate_filename, 0.0)
             resume_skills = set(extracted_skills.get(candidate_filename, []))
             
-            # Compute set intersections exactly per user instruction
             matched_skills = list(jd_skills_set & resume_skills)
             
-            # Fallback to computing via missing_skills if set dynamically
             missing_skills = missing_skills_map.get(candidate_filename, list(jd_skills_set - resume_skills))
 
             raw_results.append({
@@ -67,7 +62,6 @@ async def screen_resumes(
                 "missing_skills": missing_skills
             })
 
-        # Sort descending by score
         raw_results.sort(key=lambda x: x["score"], reverse=True)
 
         final_results = []
@@ -93,8 +87,9 @@ async def screen_resumes(
         )
         
     except HTTPException:
-        # Re-raise explicit HTTP exceptions
         raise
     except Exception as e:
         logger.error(f"Unexpected error validating or processing route: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail="Unexpected internal server error processing the resumes.")
+
+# Defines the POST /screen endpoint that accepts a job description and up to 5 PDF resumes, parses them, runs the LangGraph screening pipeline, and returns ranked candidates with matched/missing skills and processing time.

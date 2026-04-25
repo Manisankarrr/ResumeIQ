@@ -8,16 +8,14 @@ def _setup_structlog() -> None:
     if structlog.is_configured():
         return
 
-    # Decide rendering format based on the configured log level 
-    # Use console for local development (DEBUG), JSON for production
     is_development = settings.LOG_LEVEL.upper() == "DEBUG"
 
     shared_processors = [
         structlog.stdlib.filter_by_level,
-        structlog.stdlib.add_logger_name,     # includes 'name'
-        structlog.stdlib.add_log_level,       # includes 'level'
+        structlog.stdlib.add_logger_name,     
+        structlog.stdlib.add_log_level,       
         structlog.stdlib.PositionalArgumentsFormatter(),
-        structlog.processors.TimeStamper(fmt="iso"), # includes 'timestamp'
+        structlog.processors.TimeStamper(fmt="iso"), 
         structlog.processors.StackInfoRenderer(),
         structlog.processors.format_exc_info,
         structlog.processors.UnicodeDecoder(),
@@ -39,7 +37,6 @@ def _setup_structlog() -> None:
         cache_logger_on_first_use=True,
     )
 
-# Bootstrap the config on module load
 _setup_structlog()
 
 def get_logger(name: str) -> structlog.BoundLogger:
@@ -48,7 +45,6 @@ def get_logger(name: str) -> structlog.BoundLogger:
     with the required static base properties injected into the root bound context.
     """
     logger = structlog.get_logger(name)
-    # Always include static fields per instructions
     return logger.bind(service="resume-screener")
 
 def log_screening_run(
@@ -73,3 +69,5 @@ def log_screening_run(
         logger.error("Screening run failed", **event_dict)
     else:
         logger.info("Screening run completed", **event_dict)
+
+# Sets up structlog with console (dev) or JSON (prod) rendering, exposes `get_logger()` for service-bound loggers, and provides `log_screening_run()` to emit structured metrics after each screening pipeline execution.

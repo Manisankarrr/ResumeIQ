@@ -24,3 +24,5 @@ def default_state() -> ScreenerState:
         "missing_skills": {},
         "error": None
     }
+
+# Defines the `ScreenerState` TypedDict used as the shared state schema across all LangGraph nodes, and provides a `default_state()` factory to initialize it with empty defaults.

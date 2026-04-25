@@ -29,17 +29,14 @@ def extract_skills(text: str) -> list[str]:
     }
     
     def _make_request():
-        # Added explicit timeout=30 to every request
         return requests.post(url, headers=headers, json=payload, timeout=30)
         
     try:
         response = _make_request()
         
-        # Exact requested explicit HTTP 429 handling mechanism
         if response.status_code == 429:
             print("Rate limit hit - waiting 60s")
             time.sleep(60)
-            # Retry once
             response = _make_request()
             response.raise_for_status()
             
@@ -104,3 +101,5 @@ if __name__ == "__main__":
     )
     print("Status:", test_response.status_code)
     print("Response:", test_response.text)
+
+# Calls the OpenRouter LLM API to extract technical skills from text as a JSON array, with rate-limit retry and markdown stripping. Includes a standalone connectivity test when run directly.

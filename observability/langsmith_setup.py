@@ -46,3 +46,5 @@ def create_eval_dataset_entry(
             "score": float(score)
         }
     }
+
+# Configures LangSmith tracing environment variables at startup, provides a helper to get the project dashboard URL, and offers a utility to create structured eval dataset entries for manual or automated evaluation workflows.

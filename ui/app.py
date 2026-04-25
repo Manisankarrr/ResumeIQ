@@ -10,19 +10,15 @@ from html_components import (build_candidate_card_html, build_ranking_chart_html
 st.set_page_config(page_title="ResumeIQ", layout="wide", page_icon=None,
   initial_sidebar_state="expanded")
 
-# SESSION STATE INIT
 st.session_state.setdefault("results", None)
 st.session_state.setdefault("jd_skills", [])
 st.session_state.setdefault("screening", False)
 st.session_state.setdefault("proc_time", 0.0)
 
-# THEME
 dark = False
 apply_theme(dark)
 
-# SIDEBAR
 with st.sidebar:
-    # Logo
     st.markdown("""
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
       <div style="width:9px;height:9px;background:#534AB7;border-radius:50%"></div>
@@ -35,7 +31,6 @@ with st.sidebar:
 
     st.divider()
 
-    # Job description
     st.markdown('<p style="font-size:10px;font-weight:600;color:#999890;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px">Job description</p>', unsafe_allow_html=True)
     jd_text = st.text_area(
         label="jd_input",
@@ -47,7 +42,6 @@ with st.sidebar:
 
     st.divider()
 
-    # File uploader — no 200MB label, no extra text
     st.markdown('<p style="font-size:10px;font-weight:600;color:#999890;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px">Resumes (PDF · max 5)</p>', unsafe_allow_html=True)
     uploaded_files = st.file_uploader(
         label="resume_upload",
@@ -57,7 +51,6 @@ with st.sidebar:
         key="resume_files"
     )
 
-    # Show selected file count cleanly, no Streamlit default text
     if uploaded_files:
         n = len(uploaded_files)
         color = "#27500A" if n <= 5 else "#791F1F"
@@ -71,7 +64,6 @@ with st.sidebar:
 
     st.markdown("<div style='flex:1;min-height:20px'></div>", unsafe_allow_html=True)
 
-    # Spinner — shown during processing via session state
     if st.session_state.get("screening", False):
         st.markdown("""
         <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;
@@ -88,7 +80,6 @@ with st.sidebar:
         </div>
         """, unsafe_allow_html=True)
 
-    # Screen button
     can_run = bool(jd_text and jd_text.strip() and uploaded_files and len(uploaded_files) <= 5)
     screen_btn = st.button(
         "Screen Candidates",
@@ -100,15 +91,13 @@ with st.sidebar:
 
     st.markdown('<p style="font-size:10px;color:#c0bfb8;text-align:center;margin-top:8px">Llama 3.3 · FAISS · LangGraph</p>', unsafe_allow_html=True)
 
-# After the sidebar block, handle the button click:
 if screen_btn:
     if len(uploaded_files) > 5:
         st.sidebar.error("Maximum 5 resumes allowed.")
     else:
         st.session_state["screening"] = True
-        st.rerun()  # triggers the spinner to show
+        st.rerun()
 
-# When screening state is active, do the actual API call:
 if st.session_state.get("screening", False) and uploaded_files and jd_text:
     try:
         files = [("resumes", (f.name, f.read(), "application/pdf")) for f in uploaded_files]
@@ -131,10 +120,8 @@ if st.session_state.get("screening", False) and uploaded_files and jd_text:
         st.session_state["screening"] = False
         st.rerun()
 
-# GET CURRENT COLORS
 c = get_colors(dark)
 
-# RESULTS DISPLAY
 if st.session_state.results is not None:
     results = st.session_state.results
     jd_skills = st.session_state.jd_skills
@@ -224,7 +211,6 @@ if st.session_state.results is not None:
                            file_name="screening_results.csv", mime="text/csv")
 
 else:
-    # MAIN AREA — NO RESULTS STATE
     empty_html = f"""
     <div style="margin-top: 80px; text-align: center; color: {c['text3']}; font-family: 'Inter', sans-serif;">
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 16px;">
@@ -239,3 +225,5 @@ else:
     </div>
     """
     st.markdown(empty_html, unsafe_allow_html=True)
+
+# Standalone Streamlit UI for ResumeIQ: renders sidebar with JD input and PDF uploader, calls the FastAPI backend for screening, and displays ranked results with metrics, charts, candidate cards, skill matrix, and CSV export.

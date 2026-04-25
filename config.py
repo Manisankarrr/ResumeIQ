@@ -16,3 +16,5 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
 settings = Settings()
+
+# Loads environment variables and defines the Settings model with defaults for API keys, model names, and logging. Exposes a singleton `settings` instance used across the project.

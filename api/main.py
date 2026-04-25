@@ -7,14 +7,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from api.router import router
 from config import settings
 
-# Configure logging at root level
 logging.basicConfig(level=settings.LOG_LEVEL)
 logger = logging.getLogger(__name__)
 
-# Initialize FastAPI application
 app = FastAPI(title="Resume Screener API")
 
-# Configure CORS Middleware (allowing all origins for dev mode)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -27,7 +24,6 @@ app.add_middleware(
 async def startup_event():
     logger.info("Resume Screener API started")
 
-# Include business logic router cleanly prefixed
 app.include_router(router, prefix="/api/v1")
 
 @app.get("/health")
@@ -35,6 +31,6 @@ async def health_check():
     return {"status": "ok"}
 
 if __name__ == "__main__":
-    # Start up the application utilizing uvicorn
     uvicorn.run("api.main:app", host="0.0.0.0", port=int(os.getenv("PORT", 8000)), reload=False)
 
+# Initializes the FastAPI application with CORS middleware, registers the screening router under /api/v1, exposes a /health endpoint, and starts the uvicorn server when run directly.

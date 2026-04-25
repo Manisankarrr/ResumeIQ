@@ -53,7 +53,6 @@ def render_score_ranking(results):
 def render_candidate_card(result, rank):
     label = f"#{rank} {result.candidate_name} — {result.score:.0%}"
     with st.expander(label):
-        # Progress bound safely between 0-1
         safe_score = max(0.0, min(1.0, float(result.score)))
         st.progress(safe_score)
         
@@ -176,3 +175,5 @@ def render_common_skills_heatmap(results, jd_skills):
         margin=dict(l=20, r=20, t=40, b=20)
     )
     return fig
+
+# Streamlit UI helper components using Plotly and Pandas: renders KPI metrics row, horizontal bar score ranking chart, expandable candidate cards with skill pills, styled skill matrix table, universal gap alerts, and skill coverage heatmap.

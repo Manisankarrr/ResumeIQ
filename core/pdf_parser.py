@@ -13,23 +13,17 @@ def extract_text_from_pdf(file_bytes: bytes) -> str:
         
     doc.close()
     
-    # Concatenate all text from pages
     raw_text = "".join(text_chunks)
-    
-    # Strip excessive whitespace by splitting and re-joining
     clean_text = " ".join(raw_text.split())
     
-    # Raise error if text is too short
     if len(clean_text) < 50:
         raise ValueError("Extracted text is under 50 characters. Document may be scanned or empty.")
         
     return clean_text
 
 if __name__ == "__main__":
-    # Self-contained test block
     print("Running tests for extract_text_from_pdf...")
     
-    # 1. Test with a valid length PDF
     test_doc_valid = fitz.open()
     page = test_doc_valid.new_page()
     page.insert_text((50, 50), "This is a sufficiently long string of text to ensure the character count goes over the fifty characters minimum limit.")
@@ -43,7 +37,6 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"FAIL: Unexpected error on valid PDF: {e}\n")
         
-    # 2. Test with a short/invalid length PDF
     test_doc_invalid = fitz.open()
     page2 = test_doc_invalid.new_page()
     page2.insert_text((50, 50), "Too short.")
@@ -55,3 +48,5 @@ if __name__ == "__main__":
         print("FAIL: The function did not raise a ValueError for a short PDF.\n")
     except ValueError as e:
         print(f"SUCCESS: Caught expected ValueError for short PDF: '{e}'\n")
+
+# Extracts and cleans text from PDF bytes using PyMuPDF, rejecting documents with fewer than 50 characters. Includes a self-test block for validation.

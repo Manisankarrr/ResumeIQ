@@ -312,3 +312,4 @@ hr { border-color: var(--border) !important; margin: 1rem 0 !important; }
 """
     st.markdown(css, unsafe_allow_html=True)
 
+# Injects a comprehensive CSS theme into the Streamlit app covering typography, sidebar, file uploader, buttons, tabs, metrics, expanders, alerts, scrollbars, and dark mode variables via a single `apply_theme()` call.

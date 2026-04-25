@@ -11,9 +11,6 @@ from core.embedder import embed_texts, build_faiss_index, search_index
 from agents.state import ScreenerState
 
 
-
-
-
 def node_extract_skills(state: ScreenerState) -> dict[str, Any]:
     try:
         if state.get("error"):
@@ -25,11 +22,9 @@ def node_extract_skills(state: ScreenerState) -> dict[str, Any]:
         extracted_skills = {}
         jd_skills = []
 
-        # Extract skills for JD
         if jd_text:
             jd_skills = extract_skills(jd_text)
             
-        # Global Taxonomy Semantic Fallback
         if len(jd_skills) == 0:
             try:
                 with open("skills/global_skills.yaml", "r", encoding="utf-8") as f:
@@ -51,7 +46,6 @@ def node_extract_skills(state: ScreenerState) -> dict[str, Any]:
             except Exception as fe:
                 print(f"Fallback taxonomy load failed: {fe}")
 
-        # Extract skills concurrently
         with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
             future_to_name = {executor.submit(extract_skills, text): name for name, text in resume_texts.items()}
             for future in concurrent.futures.as_completed(future_to_name):
@@ -80,7 +74,6 @@ def node_embed(state: ScreenerState) -> dict[str, Any]:
         embeddings = {}
         jd_embedding = []
 
-        # Embed JD skills
         jd_skills_str = ", ".join(jd_skills)
         if jd_skills_str:
             jd_embedding_res = embed_texts([jd_skills_str])
@@ -89,7 +82,6 @@ def node_embed(state: ScreenerState) -> dict[str, Any]:
                 
         time.sleep(2)
 
-        # Embed resume skills
         resume_names = list(extracted_skills.keys())
         if resume_names:
             resume_skill_strings = [", ".join(extracted_skills[name]) for name in resume_names]
@@ -121,7 +113,6 @@ def node_rank(state: ScreenerState) -> dict[str, Any]:
         resume_names = list(embeddings.keys())
         resume_embs_list = [embeddings[name] for name in resume_names]
 
-        # Build index and search
         index = build_faiss_index(resume_embs_list)
         k = len(resume_names)
         results = search_index(index, jd_embedding, k)
@@ -131,7 +122,6 @@ def node_rank(state: ScreenerState) -> dict[str, Any]:
             name = resume_names[idx]
             scores[name] = score
 
-        # Compute missing skills: set(jd) - set(resume)
         missing_skills = {}
         jd_skills_set = set(jd_skills)
         for name in resume_names:
@@ -145,3 +135,5 @@ def node_rank(state: ScreenerState) -> dict[str, Any]:
         }
     except Exception as e:
         return {"error": f"Error in node_rank: {e}"}
+
+# Implements three LangGraph node functions: `node_extract_skills` extracts skills from JD and resumes (with taxonomy fallback), `node_embed` generates FAISS-compatible embeddings, and `node_rank` scores and ranks candidates by similarity while computing missing skills.

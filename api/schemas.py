@@ -15,3 +15,5 @@ class ScreeningResponse(BaseModel):
 
 class ErrorResponse(BaseModel):
     detail: str
+
+# Defines Pydantic response models for the screening API: `RankingResult` for individual candidate scores and skills, `ScreeningResponse` for the full screening output, and `ErrorResponse` for error payloads.

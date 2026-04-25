@@ -2,7 +2,6 @@ import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-# Load the model directly locally at module level (downloads once lazily into ~/.cache (~80MB))
 _model = SentenceTransformer("all-MiniLM-L6-v2")
 
 def embed_texts(texts: list[str]) -> list[list[float]]:
@@ -12,7 +11,6 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
     if not texts:
         return []
         
-    # Generating purely nested lists converting our vectors locally.
     embeddings = _model.encode(texts, normalize_embeddings=True)
     return embeddings.tolist()
 
@@ -42,7 +40,6 @@ def search_index(index: faiss.IndexFlatIP, query_embedding: list[float], k: int)
         
     query_vector = np.array(query_embedding, dtype=np.float32).reshape(1, 384)
     
-    # Executing deep IP dot product tracking matches
     scores, indices = index.search(query_vector, k)
     
     results = []
@@ -53,3 +50,5 @@ def search_index(index: faiss.IndexFlatIP, query_embedding: list[float], k: int)
     results.sort(key=lambda x: x[1], reverse=True)
             
     return results
+
+# Provides local text embedding via SentenceTransformers (all-MiniLM-L6-v2), FAISS index creation using inner-product similarity, and a search function to find the closest matching vectors for candidate ranking.

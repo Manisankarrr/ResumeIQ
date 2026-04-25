@@ -326,3 +326,5 @@ def build_skill_matrix_html(results: list, jd_skills: list[str], dark: bool) -> 
         
     html += '</table></div>'
     return html
+
+# Pure HTML/CSS component builders for the Streamlit UI: provides theme color maps, score/verdict helpers, and functions to generate metrics cards, candidate detail cards, horizontal ranking charts, and skill matrix tables as raw HTML strings.
