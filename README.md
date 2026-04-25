@@ -12,7 +12,10 @@ short_description: Streamlit-based AI resume screening app
 
 # ResumeIQ
 
-**AI-powered resume screening built entirely on free-tier tools.**
+
+***live: https://huggingface.co/spaces/Manisankarrr/resume-iq ***
+
+**AI-powered resume screening.**
 
 ResumeIQ lets you upload up to 5 PDF resumes alongside a job description and automatically ranks candidates by skill fit — no paid APIs, no cloud, no data leaving your machine (except the LLM call to OpenRouter).
 
