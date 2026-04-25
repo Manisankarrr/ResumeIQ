@@ -13,7 +13,7 @@ short_description: Streamlit-based AI resume screening app
 # ResumeIQ
 
 
-***live: https://huggingface.co/spaces/Manisankarrr/resume-iq ***
+***live: https://huggingface.co/spaces/Manisankarrr/resume-iq***
 
 **AI-powered resume screening.**
 
